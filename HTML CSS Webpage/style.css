@@ -1,0 +1,132 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body, html{
+    background: #f6f7f9;
+    height: 100%;
+}
+/* Social Media Bar */
+.contact {
+    background-color: #f25a2b;
+    height: 39px;
+}
+.contact ul{
+    padding: 10px;
+    position: fixed;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+}
+.contact ul li{
+    list-style-type: none;
+    display: inline;
+    color: azure;
+    padding: 10px;
+    font-weight: 400;
+}
+.facebook:hover{
+    background-color: rgb(50, 50, 192);
+}
+.insta:hover{
+    background-color: rgb(155, 28, 155);
+}
+.twitter:hover{
+    background-color: rgb(78, 205, 255);
+}
+.phone{
+    float: right;
+    vertical-align: middle;
+}
+/* Navbar */
+nav{
+    height: 60px;
+    background-color: whitesmoke;
+    padding: 15px;
+    font-size: larger;
+}
+nav .menu-items{
+    list-style-type: none;
+    display: inline-block;
+}
+nav ul{
+    position: static;
+}
+nav .menu li{
+    display: inline;
+}
+/* Hero Image */
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/hero-image.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.hero-text {
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+/*News Styles*/
+
+#news .title{
+    text-align: center;
+    margin:40px 0px
+}
+#news .title::after{
+    content:"";
+	width:200px;
+	height:3px;
+	background:red;
+	display:block;
+	margin:10px auto;
+	border-radius:10px;
+}
+
+
+#news .title h1{
+    margin-bottom: 5px;
+}
+#news .row .col{
+    width: 33.33%;
+    float:left;
+}
+#news .row{
+    overflow: hidden;
+    padding:0 60px;
+}
+#news .card img{
+    width:100%;
+    height:250px;
+}
+#news .card{
+margin: 15px 20px;
+border:2px solid #dedfdf;
+border-radius: 0px 0px 10px 10px;
+
+}
+#news .card .card-body{
+    padding:20px 15px
+}
+#news .card .card-footer{
+    background: #f7f7f7;
+    padding:20px 10px;
+    border-top:2px solid  #dedfdf
+}
+#news .card h3{
+    color:#f25a2b;
+    margin-bottom:15px
+}
+#news .card p{
+   text-align: justify;
+   line-height: 25px;
+   letter-spacing: 1.15px;
+   color:rgba(0,0,0,0.7)
+}
