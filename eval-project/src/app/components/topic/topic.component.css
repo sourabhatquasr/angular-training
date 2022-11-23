@@ -1,0 +1,10 @@
+
+#courses h1{
+    font-weight: 900!important;
+    font-size: 40px;
+}
+
+#courses img{
+    height:200px;
+    width:100%
+}

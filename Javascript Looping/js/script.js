@@ -18,18 +18,7 @@ const courses=[
 
 
 var p="";
-    p += `
-    <table border>
-    <thead>
-    <tr>
-    <th>Name</th>
-    <th>Image</th>
-    <th>Content</th>
-    <th>Fees</th>
-    </tr>
-    </thead>
-    <tbody>
-`
+
     for(let x of courses){
     p+=`
     <tr>

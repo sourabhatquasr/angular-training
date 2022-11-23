@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">ILANDER</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">ABOUT</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink="#" role="button" data-bs-toggle="dropdown"  routerLinkActive="active">COURSES</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/courses/angular"  routerLinkActive="active">Angular</a></li>
+            <li><a class="dropdown-item" routerLink="/courses/react"  routerLinkActive="active">React JS</a></li>
+            <li><a class="dropdown-item" routerLink="/courses/vuejs"  routerLinkActive="active">Vue Js</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,15 @@
+<section id="courses" class="container">
+    <h1 class="display-4 text-center text-primary my-5">ILANDER COURSES</h1>
+    <div class="row">
+        <div class="col-md-4 col-sm-12 col-12 mb-3" *ngFor="let y of topics">
+            <div class="card h-100">
+                <img class="card-img-top" [src]="filepath+y.d_img" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-title">{{y.d_name}}</h4>
+                  <p class="card-text">{{y.d_desc}}</p>
+                  <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

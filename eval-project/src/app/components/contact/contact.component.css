@@ -1,0 +1,28 @@
+.card {
+    width: 49%;
+    margin: 1% 2% 1% 2%;
+}
+
+input,
+textarea,
+select {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-bottom: 3px;
+}
+
+em {
+    color: red;
+    font-weight: 600;
+}
+
+button {
+    width: 100%;
+}
+
+iframe {
+    margin-bottom: 3px;
+    border-radius: 4px;
+}

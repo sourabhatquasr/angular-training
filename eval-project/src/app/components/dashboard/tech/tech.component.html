@@ -1,0 +1,130 @@
+<app-dash-header></app-dash-header>
+<div class="container">
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#myModal">
+   ADD COURSE
+  </button>
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header ">
+        <h3 class="mb-0">UPLOAD IMAGE</h3>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form #log='ngForm'>
+                <div class="mb-4">
+                    <input type="text" class="form-control" name="name" [(ngModel)]="slider.name" #name='ngModel' required placeholder="Enter Course Name">
+                </div>
+                <p *ngIf='name.touched && name.invalid' class="text-danger">Please Enter Course Name</p>
+
+                <div class="mb-4">
+                  <input type="file" class="form-control-file border" name="file" [(ngModel)]="slider.img" #file='ngModel' required (change)="uploadImg($event)">
+                </div>
+                <p *ngIf='file.touched && file.invalid' class="text-danger">Please Select file</p>
+
+                <div class="mb-4">
+                    <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Enter DESC" name="desc" [(ngModel)]="slider.desc" #desc='ngModel' required></textarea>
+                </div>
+                <p *ngIf='desc.touched && desc.invalid' class="text-danger">Please Enter Course DESC</p>
+
+                <button type="button" class="btn btn-primary" [disabled]="log.invalid" (click)="upload()">Upload</button>
+                <p [ngClass]="clr">{{msg}}</p>
+            </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <h2 class="text-center text-primary">ALL SLIDERS</h2>
+   <h1 [ngClass]="clr">{{msg1}}</h1>        
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+        <th>COURSE NAME</th>
+        <th>IMAGE</th>
+        <th style="width:50%">DESC</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of data">
+        <td>{{x.id}}</td>
+        <td><button class="btn btn-primary"  (click)="edt(x.d_id)" data-bs-toggle="modal" data-bs-target="#updateModal">EDIT</button></td>
+        <td><button class="btn btn-danger" (click)="del(x.d_id)" >DELETE</button></td>
+        <td>
+            {{x.d_name}}
+          </td>
+        <td><img [src]="filepath+x.d_img" width="100px" height="100px"></td>
+        <td>
+          {{x.d_desc}}
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+
+
+  <!--Upload Model-->
+
+  <div class="modal" id="updateModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">UPDATE SLIDER</h4>
+          
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form >
+                <div class="my-3">
+                    <label>UID</label>
+                    <input type="text" class="form-control"  name="sliderUpdate.uid" required disabled [(ngModel)]="sliderUpdate.uid">
+                </div>
+                <div class="mb-4">
+                    <input type="text" class="form-control" name="name" [(ngModel)]="sliderUpdate.name" #name='ngModel' required placeholder="Enter Course Name">
+                </div>
+                <div class="mb-2">
+                  <label>UPLOAD IMG:</label>
+                  <input type="file" class="form-control"  name="sliderUpdate.img" required (change)="uploadImg($event)" [(ngModel)]="sliderUpdate.img" >
+                  <img [src]="filepath+sliderUpdate.img1" width="100px" class="mt-3">
+                </div>
+                <div class="mb-4">
+                    <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Enter DESC" name="desc" [(ngModel)]="sliderUpdate.desc" #desc='ngModel' required></textarea>
+                </div>
+
+
+                <!--To show image here fiepath alredy Ts declare variable-->
+                <button type="submit" class="btn btn-primary"  (click)="updateslider()">UPDATE</button>
+                <p [ngClass]="clr"><b>{{msgU}}</b></p>
+              </form>   
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+</div>
